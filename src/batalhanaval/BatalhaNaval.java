@@ -9,8 +9,7 @@ import static batalhanaval.Tabelas.tabela1;
 import static batalhanaval.Tabelas.tabela2;
 import static batalhanaval.Tabelas.tabelaResposta1;
 import static batalhanaval.Tabelas.tabelaResposta2;
-import java.util.Scanner;            //Adicionar if por causa do erro de linha fora da tabela
-
+import java.util.Scanner;
 /**
  *
  * @author Casa
@@ -1034,12 +1033,26 @@ public class BatalhaNaval {
         int j1 = 0, j2 = 0;
         while (j1 != 20 && j2 != 20){
             if (jogada == 1){
-                System.out.println("\n\n---VEZ DO JOGADOR 1---\n");
-                tabelaResposta1(tabelaResposta1);
-                System.out.print("\n\nChute uma linha: ");                //testar se o número digitado é válido 
-                linha = leia.nextInt();                                   //e se a casa digitada ja foi digitada anteriormente
-                System.out.print("Chute uma coluna: ");
-                coluna = leia.nextInt();
+                while (correto == false){
+                    System.out.println("\n\n---VEZ DO JOGADOR 1---\n");
+                    tabelaResposta1(tabelaResposta1);
+                    System.out.print("\n\nChute uma linha: ");
+                    linha = leia.nextInt();
+                    System.out.print("Chute uma coluna: ");
+                    coluna = leia.nextInt();
+                    if ((linha < 1 || linha > 10) || (coluna < 1 || coluna > 10)){
+                        System.out.println("--------------------------------------------");
+                        System.out.println("Essa linha ou coluna não existe!");
+                        System.out.println("--------------------------------------------");
+                    } else if (jogador2[linha][coluna].equals("ja foi")){
+                        System.out.println("--------------------------------------------");
+                        System.out.println("Essa casa já foi escolhida anteriormente!");
+                        System.out.println("--------------------------------------------");
+                    } else {
+                        correto = true;
+                    }
+                }
+                correto = false;
                 
                 if (jogador2[linha][coluna].equals("Barco")){
                     System.out.println("\n===================================================");
@@ -1048,22 +1061,38 @@ public class BatalhaNaval {
                     tabelaResposta1[linha][coluna] = "Barco";
                     jogada = 1;
                     j1++;
-                    tabelaResposta1(tabelaResposta1);
+                    jogador2[linha][coluna] = "ja foi";
                 } else {
                     System.out.println("\n===================================================");
                     System.out.println("Você acredtou o mar!");
                     System.out.println("===================================================\n");
                     tabelaResposta1[linha][coluna] = "XXXXX";
                     jogada = 2;
+                    jogador2[linha][coluna] = "ja foi";
                     tabelaResposta1(tabelaResposta1);
                 }
             } else {
-                System.out.println("\n\n---VEZ DO JOGADOR 2---\n");
-                tabelaResposta2(tabelaResposta2);
-                System.out.print("\n\nChute uma linha: ");                //testar a jogada coom int de 1 ou 2
-                linha = leia.nextInt();
-                System.out.print("Chute uma coluna: ");
-                coluna = leia.nextInt();
+                while (correto == false){
+                    System.out.println("\n\n---VEZ DO JOGADOR 2---\n");
+                    tabelaResposta2(tabelaResposta2);
+                    System.out.print("\n\nChute uma linha: ");
+                    linha = leia.nextInt();
+                    System.out.print("Chute uma coluna: ");
+                    coluna = leia.nextInt();
+                    
+                    if ((linha < 1 || linha > 10) || (coluna < 1 || coluna > 10)){
+                        System.out.println("--------------------------------------------");
+                        System.out.println("Essa linha ou coluna não existe!");
+                        System.out.println("--------------------------------------------");
+                    } else if (jogador1[linha][coluna].equals("ja foi")){
+                        System.out.println("--------------------------------------------");
+                        System.out.println("Essa casa já foi escolhida anteriormente!");
+                        System.out.println("--------------------------------------------");
+                    } else {
+                        correto = true;
+                    }
+                }
+                correto = false;
                 
                 if (jogador1[linha][coluna].equals("Barco")){
                     System.out.println("\n===================================================");
@@ -1072,13 +1101,14 @@ public class BatalhaNaval {
                     tabelaResposta2[linha][coluna] = "Barco";
                     jogada = 2;
                     j2++;
-                    tabelaResposta2(tabelaResposta2);
+                    jogador1[linha][coluna] = "ja foi";
                 } else {
                     System.out.println("\n===================================================");
                     System.out.println("Você acredtou o mar!");
                     System.out.println("===================================================\n");
                     tabelaResposta2[linha][coluna] = "XXXXX";
                     jogada = 1;
+                    jogador1[linha][coluna] = "ja foi";
                     tabelaResposta2(tabelaResposta2);
                 }
             }
