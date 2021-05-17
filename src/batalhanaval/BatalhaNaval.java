@@ -38,69 +38,6 @@ public class BatalhaNaval {
                 tabelaResposta2[L][C] = "     ";
             }
         }
-        
-        
-        /*
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[1][i] = "     ";
-            jogador2[1][i] = "     ";
-            tabelaResposta1[1][i] = "     ";
-            tabelaResposta2[1][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[2][i] = "     ";
-            jogador2[2][i] = "     ";
-            tabelaResposta1[2][i] = "     ";
-            tabelaResposta2[2][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[3][i] = "     ";
-            jogador2[3][i] = "     ";
-            tabelaResposta1[3][i] = "     ";
-            tabelaResposta2[3][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[4][i] = "     ";
-            jogador2[4][i] = "     ";
-            tabelaResposta1[4][i] = "     ";
-            tabelaResposta2[4][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[5][i] = "     ";
-            jogador2[5][i] = "     ";
-            tabelaResposta1[5][i] = "     ";
-            tabelaResposta2[5][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[6][i] = "     ";
-            jogador2[6][i] = "     ";
-            tabelaResposta1[6][i] = "     ";
-            tabelaResposta2[6][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[7][i] = "     ";
-            jogador2[7][i] = "     ";
-            tabelaResposta1[7][i] = "     ";
-            tabelaResposta2[7][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[8][i] = "     ";
-            jogador2[8][i] = "     ";
-            tabelaResposta1[8][i] = "     ";
-            tabelaResposta2[8][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[9][i] = "     ";
-            jogador2[9][i] = "     ";
-            tabelaResposta1[9][i] = "     ";
-            tabelaResposta2[9][i] = "     ";
-        }
-        for (int i = 0; i < jogador1.length; i++){
-            jogador1[10][i] = "     ";
-            jogador2[10][i] = "     ";
-            tabelaResposta1[10][i] = "     ";
-            tabelaResposta2[10][i] = "     ";
-        }*/
         tabela1(jogador1);
         //Jogador 1 montando sua tabela
         System.out.println("\n\n-JOGADOR 1--\n");
