@@ -30,6 +30,17 @@ public class BatalhaNaval {
         boolean correto = false;
         
         //Preenchendo as casas com um espaço vazio
+        for (int L = 0; L < jogador1.length; L++){//L de linha
+            for (int C = 0; C < jogador1.length; C++){//C de coluna
+                jogador1[L][C] = "     ";
+                jogador2[L][C] = "     ";
+                tabelaResposta1[L][C] = "     ";
+                tabelaResposta2[L][C] = "     ";
+            }
+        }
+        
+        
+        /*
         for (int i = 0; i < jogador1.length; i++){
             jogador1[1][i] = "     ";
             jogador2[1][i] = "     ";
@@ -89,7 +100,7 @@ public class BatalhaNaval {
             jogador2[10][i] = "     ";
             tabelaResposta1[10][i] = "     ";
             tabelaResposta2[10][i] = "     ";
-        }
+        }*/
         tabela1(jogador1);
         //Jogador 1 montando sua tabela
         System.out.println("\n\n-JOGADOR 1--\n");
